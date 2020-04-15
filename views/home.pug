@@ -1,0 +1,14 @@
+extends ./layouts/main.pug
+block content
+    h1 #{siteName}
+    
+    .home_column
+        a(href=routes.login)
+            span
+                i.fas.fa-user-circle
+                |Log in   
+        a(href=routes.join)    
+            span
+                i.fas.fa-smoking
+                |Join   
+        a(href=routes.login)

@@ -3,7 +3,7 @@ import morgan from "morgan"
 import helmet from "helmet"
 import cookie_parser from "cookie-parser"
 import body_parser from "body-parser"
-import {localsMiddleware} from "./middlewares/middleware"
+import {localsMiddleware} from "./middleware/middlewares.js"
 import globalRouter from "./router/globalRouter"
 import userRouter from "./router/userRouter"
 const app = express();

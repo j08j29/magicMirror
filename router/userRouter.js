@@ -2,10 +2,6 @@ import express from "express"
 
 const userRouter = express.Router();
 
-userRouter.get("/users/logout",function logout(req,res){
-    res.send("USER_LOGOUT")
-    
-})
 userRouter.get("/users/editProfile",function editProfile(req,res){
     res.send("EDIT_PROFILE")
     
