@@ -3,12 +3,28 @@ block content
     h1 #{siteName}
     
     .home_column
-        a(href=routes.login)
-            span
-                i.fas.fa-user-circle
-                |Log in   
-        a(href=routes.join)    
-            span
-                i.fas.fa-smoking
-                |Join   
-        a(href=routes.login)
+        if loggedUser
+            span #{loggedUser.name}님 반갑습니다만..   
+        ul
+            if !loggedUser
+                li
+                    a(href=routes.login)
+                        span
+                            i.fas.fa-user-circle
+                            |Log in   
+                li
+                    a(href=routes.join)    
+                        span
+                            i.fas.fa-smoking
+                            |Join                
+            else
+                li
+                    a(href=routes.logout)  
+                        span
+                        |LOGOUT 
+                li
+                    a(href=routes.me)  
+                        span
+                        |PROFILE        
+
+        
