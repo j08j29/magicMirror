@@ -14,9 +14,9 @@ import mongoose from "mongoose"
 import routes from "./routes"
 import dotenv from "dotenv"
 dotenv.config();
-const app = express();
-const CookieStore = MongoStore(session)
-app.set("view engine","pug");
+const app = express(); //express nodejs의 프레임워크이다. -> 서버
+const CookieStore = MongoStore(session) 
+app.set("view engine","pug"); //화면을 보여주기위해 html파일대신 pug라는 템플릿엔진을 사용한다.
 
 app.use(cookie_parser());
 app.use(body_parser.json());
@@ -30,7 +30,7 @@ app.use(session({
     store : new CookieStore({
         mongooseConnection:mongoose.connection
     })//서버를 변경하여 재시작하게되어도, 로그인상태가 유지된다
-}))
+})) // 세션 -> 쿠키를 생성 
 
 app.use(passport.initialize())//저장하기전 초기화 user정보가 req.user로 들어가게된다.
 app.use(passport.session())//세선도 저장 -> 로그인을 지속시키기위해서 서버에 저장한 세션을 이용한다.

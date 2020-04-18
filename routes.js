@@ -9,6 +9,7 @@ const USER_DETAIL = "/users/:id"
 const EDIT_PROFILE = "/users/edit-profile"
 const CHANGE_PASSWORD = "/users/change-password"
 const ME = "/users/me"
+const CLOSET = "/users/:id/closet"
 
 
 //facebook login
@@ -27,6 +28,13 @@ const routes = {
 
         }else{
             return USER_DETAIL
+        }
+    },
+    closet : id=>{
+        if(id){
+            return `/users/${id}/closet`
+        }else{
+            return CLOSET;
         }
     },
     edit_profile:EDIT_PROFILE,

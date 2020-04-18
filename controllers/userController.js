@@ -68,12 +68,13 @@ export const userDetail = async(req,res)=>{
 export const edit_profile = (req,res)=>{
     res.render("edit_profile",{pageTitle: "edit profile"})
 }
-
 export const change_password = (req,res)=>{
-    res.render("change_password",{pageTitle: "change your password"})
-    
+    res.render("change_password",{pageTitle: "change your password"})    
 }
-
+export const myCloset = (req,res)=>{
+    console.log(req);
+    res.render("my_closet",{pageTitle:"mycloset"})
+}
 
 
 
